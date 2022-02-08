@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "cpr/cpr.h"
 
 using std::cout;
@@ -7,7 +8,18 @@ using std::endl;
 
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    cpr::Response r;
+    r = cpr::Get(cpr::Url{"http://httpbin.org/html"}, cpr::Header{{"Accept", "text/html"}});
+
+    size_t pos1 = r.text.find("<h1>");
+    size_t pos2 = r.text.find("</h1>");
+
+    for (int i = pos1 + 4; i < pos2; i++){
+        cout << r.text[i];
+    }
+
+    cout << endl;
+
     return 0;
 }
 
