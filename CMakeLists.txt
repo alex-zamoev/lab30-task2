@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(task1)
+project(task2)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -14,5 +14,5 @@ FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git
         GIT_TAG beb9e98806bb84bcc130a2cebfbcbbc6ce62b335) # The commit hash for 1.7.2. Replace with the latest from: https://github.com/libcpr/cpr/releases
 FetchContent_MakeAvailable(cpr)
 
-add_executable(task1 main.cpp)
-target_link_libraries(task1 PRIVATE cpr::cpr)
+add_executable(task2 main.cpp)
+target_link_libraries(task2 PRIVATE cpr::cpr)
